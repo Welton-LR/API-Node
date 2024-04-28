@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require ('express');
 const app = express();
 const router = express.Router();
@@ -9,5 +11,6 @@ const route = router.get('/', (req, res, next) => {
     });
 })
 
-app.use("/", route);
+app.use('/', route);
+
 module.exports = app;
