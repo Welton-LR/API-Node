@@ -6,9 +6,10 @@ const express = require('express');
 const { title } = require('process');
 const { VERSION } = require('@angular/cli');
 const { version } = require('os');
+const { normalize } = require('path');
 
 const app = express();
-const port = 3000;
+const port = normalize(process.env.PORT || '3000');
 app.set('port, port');
 
 const server = http.createServer(app);
@@ -22,3 +23,6 @@ const route = router.get('/', (req, res, next) => {
 });
 
 app.use('/', route);
+
+server.listen(port);
+console.log("API rodando na porta " + port);
