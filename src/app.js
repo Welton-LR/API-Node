@@ -12,8 +12,7 @@ const route = router.get('/', (req, res, next) => {
     });
 })
 
-
-const creat = router.post('/', (req, res, next) => {
+const create = router.post('/', (req, res, next) => {
     res.status(201).send(req.body);
 })
 
