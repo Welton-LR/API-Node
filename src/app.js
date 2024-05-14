@@ -2,23 +2,15 @@
 
 const express = require ('express');
 const app = express();
-const router = express.Router();
 const bodyParser = require('body-parser');
-
+const router = express.Router();
+const index = require('./routes/index');
 
 // Configurando o body-parser para interpretar solicitações JSON
 app.use(bodyParser.json());
 
 // Configurando o body-parser para interpretar solicitações de formulário
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
-const route = router.get('/', (req, res, next) => {
-    res.status(200).send({
-        title : "Node Store Api",
-        version : "0.0.1"
-    });
-})
 
 const create = router.post('/', (req, res, next) => {
     res.status(201).send(req.body);
@@ -32,11 +24,11 @@ const put = router.put('/:id', (req, res, next) => {
     });
 })
 
-const del = router.delete('/:id', (req, res, next) => {
+const del = router.delete('/', (req, res, next) => {
     res.status(200).send(req.body);
 })
 
-app.use('/', route);
+app.use('/', index);
 app.use('/products', create);
 app.use('/products', put);
 app.use('/products', del);
