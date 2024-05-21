@@ -2,9 +2,12 @@
 
 const express = require ('express');
 const bodyParser = require('body-parser');
+const mongoose =require('mongoose');
 
 const app = express();
 const router = express.Router();
+
+mongoose.connect('mongodb+srv://nodestore:n891j11WRPTAPgSw@nodew.dqfqbtu.mongodb.net/?retryWrites=true&w=majority&appName=nodew')
 
 // Carregar as rotas
 const indexRoute = require('./routes/index-route');
