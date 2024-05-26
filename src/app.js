@@ -7,7 +7,10 @@ const mongoose = require('mongoose');
 const app = express();
 const router = express.Router();
 
-mongoose.connect('mongodb+srv://nodestore:xxxxxx@nodew.dqfqbtu.mongodb.net/?retryWrites=true&w=majority&appName=nodew')
+mongoose.connect('mongodb+srv://nodestore:n891j11WRPTAPgSw@nodew.dqfqbtu.mongodb.net/?retryWrites=true&w=majority&appName=nodew');
+
+//carrega os models
+const Product = require('./models/product');
 
 // Carregar as rotas
 const indexRoute = require('./routes/index-route');

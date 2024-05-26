@@ -30,7 +30,7 @@ const schema = new Schema({
     active: {
         type: Boolean,
         required: true,
-        defaut: true,
+        default: true,
     },
     tags: [{
         type: String,
